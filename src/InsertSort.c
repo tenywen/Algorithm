@@ -2,16 +2,16 @@
 *
 *       @insert sort
 *       @O(n^2)
-*       @Int
+*       @int32
 *       @from 1 to n
 *       @only limited nums not sort
 */
 #include <stdio.h>
-#include <stdlib.h>
-int InsertSort(int* A,int length) {
-    int i = 0;
-    int j = 0;
-    int key = 0;
+#include "../include/common.h" 
+int32 InsertSort(int32* A,int32 length) {
+    int32 i = 0;
+    int32 j = 0;
+    int32 key = 0;
     for(i = 1; i < length; i ++) {
         // save key value to complete
         key = A[i];
@@ -29,9 +29,9 @@ int InsertSort(int* A,int length) {
 }
 
 // only for test
-int main() {
-    int A[10] = {1,23,43,12,2,2,4,7878,1000,24};
-    int i = 0;
+int32 main() {
+    int32 A[10] = {1,23,43,12,2,2,4,7878,1000,24};
+    int32 i = 0;
     for (; i < 10; i ++) {
         printf("%d",A[i]);
         printf(" ");
