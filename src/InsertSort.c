@@ -6,12 +6,11 @@
 *       @from 1 to n
 *       @only limited nums not sort
 */
-#include <stdio.h>
-#include "../include/common.h" 
-int32 InsertSort(int32* A,int32 length) {
-    int32 i = 0;
-    int32 j = 0;
-    int32 key = 0;
+
+int InsertSort(int* A,int length) {
+    int i = 0;
+    int j = 0;
+    int key = 0;
     for(i = 1; i < length; i ++) {
         // save key value to complete
         key = A[i];
@@ -24,23 +23,6 @@ int32 InsertSort(int32* A,int32 length) {
         // while(j--)
         // so j + 1 is true pos to insert key value
         A[j + 1] = key;
-    }
-    return 0;
-}
-
-// only for test
-int32 main() {
-    int32 A[10] = {1,23,43,12,2,2,4,7878,1000,24};
-    int32 i = 0;
-    for (; i < 10; i ++) {
-        printf("%d",A[i]);
-        printf(" ");
-    }
-    printf("\n");
-    InsertSort(A,10);
-    for (i = 0; i < 10; i ++) {
-        printf("%d",A[i]);
-        printf(" ");
     }
     return 0;
 }

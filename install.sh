@@ -1,7 +1,7 @@
 #/bin/sh
-if [ ! -d build ] ; then
-    mkdir build
+if [ ! -d lib ] ; then
+    mkdir lib 
 fi
-cd build/
-rm -rf *
-cmake ../
+make
+mv *.a lib/
+make clean
