@@ -4,14 +4,14 @@
 *       @O(n^2)
 *       @int32
 *       @from 1 to n
-*       @only limited nums not sort
+*       @only limited nums which not sort not in A[]
 */
 
-int InsertSort(int* A,int length) {
+int InsertSort(int* A,int q, int r) {
     int i = 0;
     int j = 0;
     int key = 0;
-    for(i = 1; i < length; i ++) {
+    for(i = q + 1; i <= r; i ++) {
         // save key value to complete
         key = A[i];
         j = i - 1;
