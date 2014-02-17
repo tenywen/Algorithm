@@ -34,8 +34,3 @@ Node* Insert(Node *head,Node *p) {
     }
     return head;
 }
-
-int main() {
-
-    return 0;
-}
