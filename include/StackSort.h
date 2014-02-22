@@ -7,6 +7,8 @@ struct Stack {
     int size; 
 };
 
-
+extern Stack* Create();
+extern int BuildStack(Stack* p);
+extern int GetMax(Stack* p);
 
 #endif
