@@ -11,11 +11,12 @@
 #include <stdio.h>
 #include "inc/common.h"
 #include "../include/StackSort.h"
+#include <stdlib.h>
 #define LEFT(i) (i >> 1)
 #define RIGHT(i) ((i >> 1) + 1)
 #define PARENT(i) iCEIL(i)
 
-Stack *Creat() {
+Stack* Creat() {
     Stack* p = NULL;
     p = (Stack*)malloc(sizeof(Stack));
     if(p == NULL) {
@@ -49,11 +50,21 @@ int _stack_down(Stack* p,int seq) {
     return 0;
 }
 
-int Print(stack)
-
-int Build_stack(Stack* p) {
+int BuildStack(Stack* p) {
     int seq = 0;
     for(seq = iFLOOR(p->size/2) ; seq > 0; seq --) {
         _stack_down(p,seq); 
     }
+}
+
+int GetMax(Stack* p) {
+    int size = p->size;
+    // 堆头与堆尾交换
+    if(size > 0) {
+        SWAP(p->stack[0],p->stack[size - 1]);
+        p->size --;
+        // 从堆首向下调整
+        _stack_down(p,1);
+    }
+    return p->stack[size - 1];
 }

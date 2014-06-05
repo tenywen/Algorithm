@@ -10,11 +10,6 @@
 #include <stdio.h>
 extern int InsertSort(int* A,int q,int r);
 
-int MergeSort(int* A,int length) {
-    _merge_sort(A,0,0 + length - 1);
-    return 0;
-}
-
 int _merge_sort(int* A, int q, int r) {
     int m = 0;
     if(r > q) {
@@ -28,3 +23,9 @@ int _merge_sort(int* A, int q, int r) {
     }
     return 0;
 }
+
+int MergeSort(int* A,int length) {
+    _merge_sort(A,0,0 + length - 1);
+    return 0;
+}
+

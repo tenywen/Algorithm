@@ -8,8 +8,10 @@
 #define iCEIL(a) (( float(a) - int(a) > 0.0) ? int(a + 1) : int(a)) 
 #define SWAP(a,b) do\
 					{\
-						a = a^b;\
-						b = a^b;\
-						a = a^b;\
+                        if(a != b){\
+						    a = a^b;\
+						    b = a^b;\
+						    a = a^b;\
+                        }\
 					}while(0)
 #endif
