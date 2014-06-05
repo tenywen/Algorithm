@@ -26,19 +26,17 @@ int _partion(int *A, int l, int h) {
 		}
 	}
 	SWAP(A[l],A[large - 1]);
-    printf("large = %d\n",large);
 	return large - 1;
 }
 
 int QuickSort(int *A,int l, int h) {
     // 判断临界
-	if(l == h) {
+	if(l == h || l < 0 || l > h) {
 		return 0;
 	}
     int pos = _partion(A,l,h);
-    //printf("pos = %d\n",pos);
-    //QuickSort(A,l,pos - 1);
-    //QuickSort(A,pos + 1,h);
+    QuickSort(A,l,pos - 1);
+    QuickSort(A,pos + 1,h);
     return 0;
 }
 
