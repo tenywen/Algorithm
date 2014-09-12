@@ -56,7 +56,7 @@ int _transplant(Tree* T,pNode x,pNode y) {
     return 0;
 }
 
-// 
+// get 后续节点
 pNode Min(pNode p) {
     if(p == NULL) {
         return NULL;
@@ -78,12 +78,13 @@ int Del(Tree* T,pNode p) {
         pNode y = Min(p->right);  // p的后续节点  
         if (y->parent != p) { // y 不是p的子节点
             _transplant(T,y,y->right);
+            y->right = p->right; 
+            p->right->parent = y;
         }
+        // y 是p的子节点，则一定是左子节点
         _transplant(T,p,y); 
         y->left = p->left;
-        //y->right = p->right; 
         p->left->parent = y;
-        //p->right->parent = y;
     }
 }
 
